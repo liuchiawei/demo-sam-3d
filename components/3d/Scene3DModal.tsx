@@ -26,9 +26,9 @@ interface Scene3DModalProps {
 export function Scene3DModal({ isOpen, onClose }: Scene3DModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-6xl p-0 overflow-hidden">
+      <DialogContent className="p-0 overflow-hidden">
         <DialogTitle className="sr-only">3D 抽出オブジェクトを確認</DialogTitle>
-        <div className="aspect-video min-h-[70vh] w-full">
+        <div className="aspect-square min-h-[80vh] w-full">
           {isOpen && <SAMScene />}
         </div>
       </DialogContent>

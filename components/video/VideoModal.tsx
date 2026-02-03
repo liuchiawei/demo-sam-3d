@@ -13,11 +13,11 @@ interface VideoModalProps {
 export function VideoModal({ isOpen, onClose, src, poster }: VideoModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl p-0">
+      <DialogContent className="p-0 overflow-hidden">
         <SAMVideoPlayer
           src={src}
           poster={poster}
-          className="aspect-video w-full"
+          className="aspect-video"
           controls
           autoPlay
         />

@@ -41,7 +41,7 @@ export const messages = {
     },
     visualEffect: {
       title: "ビジュアルエフェクト",
-      description: "AIで選択した部分に様々なエフェクトを編集",
+      description: "AIで選択した部分に様々なエフェクトを適用",
       detail:
         "選択したオブジェクトにフィルターやエフェクトを適用して表現を拡張できます",
     },
@@ -58,7 +58,7 @@ export const messages = {
         "選択した領域にモザイクやぼかしを適用し、個人情報や機密情報を保護できます",
     },
     tracking: {
-      title: "軌跡追蹤",
+      title: "軌跡追跡",
       description: "特定のオブジェクトの移動経路を追跡",
       detail:
         "選択したオブジェクトの動きをリアルタイムで追跡し、移動パターンを視覚化できます",

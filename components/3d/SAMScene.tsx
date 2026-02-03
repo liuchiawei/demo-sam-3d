@@ -2,7 +2,12 @@
 
 import { Suspense, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Environment, useGLTF, useTexture } from "@react-three/drei";
+import {
+  OrbitControls,
+  Environment,
+  useGLTF,
+  useTexture,
+} from "@react-three/drei";
 import * as THREE from "three";
 import { PATHS, SCENE_CONFIG } from "@/lib/constants";
 
@@ -14,12 +19,20 @@ useGLTF.preload(PATHS.models.worker2);
 interface ModelProps {
   url: string;
   position?: [number, number, number];
+  rotation?: [number, number, number];
   scale?: number;
   onHover?: (hovered: boolean) => void;
   onClick?: () => void;
 }
 
-function Model({ url, position = [0, 0, 0], scale = 1, onHover, onClick }: ModelProps) {
+function Model({
+  url,
+  position = [0, 0, 0],
+  rotation = [0, 0, 0],
+  scale = 1,
+  onHover,
+  onClick,
+}: ModelProps) {
   const { scene } = useGLTF(url);
   const meshRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
@@ -27,7 +40,8 @@ function Model({ url, position = [0, 0, 0], scale = 1, onHover, onClick }: Model
   // 悬停动画
   useFrame((state) => {
     if (meshRef.current && hovered) {
-      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 2) * 0.05;
+      meshRef.current.position.y =
+        position[1] + Math.sin(state.clock.elapsedTime * 2) * 0.05;
     }
   });
 
@@ -47,6 +61,7 @@ function Model({ url, position = [0, 0, 0], scale = 1, onHover, onClick }: Model
     <group
       ref={meshRef}
       position={position}
+      rotation={rotation}
       scale={scale}
       onPointerOver={handlePointerOver}
       onPointerOut={handlePointerOut}
@@ -107,15 +122,16 @@ function Scene() {
       <Suspense fallback={null}>
         <Model
           url={PATHS.models.worker1}
-          position={[-2, 0, 0]}
-          scale={1}
+          position={[-2, -0.5, 2]}
+          rotation={[0, Math.PI / 4, 0]}
+          scale={1.4}
           onHover={(hovered) => console.log("Worker 1 hovered:", hovered)}
           onClick={() => setSelectedModel("worker1")}
         />
 
         <Model
           url={PATHS.models.bag}
-          position={[0, -0.5, 0.5]}
+          position={[0, 0, 0.5]}
           scale={0.8}
           onHover={(hovered) => console.log("Bag hovered:", hovered)}
           onClick={() => setSelectedModel("bag")}
@@ -123,7 +139,8 @@ function Scene() {
 
         <Model
           url={PATHS.models.worker2}
-          position={[2, 0, 0]}
+          position={[2, -0.5, 2]}
+          rotation={[0, - Math.PI / 6, 0]}
           scale={1}
           onHover={(hovered) => console.log("Worker 2 hovered:", hovered)}
           onClick={() => setSelectedModel("worker2")}
