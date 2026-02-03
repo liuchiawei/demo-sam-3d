@@ -119,3 +119,74 @@ export const scrollTrigger = {
   amount: 0.3,
   margin: "-100px",
 };
+
+// 3D卡片显示动画（带透视效果）
+export const card3DReveal: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+    rotateX: -15,
+    scale: 0.9,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    }
+  }
+};
+
+// 行业卡片悬停效果（带3D倾斜）
+export const industryCardHover = {
+  rest: {
+    scale: 1,
+    rotateY: 0,
+    boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+    transition: TRANSITIONS.fast,
+  },
+  hover: {
+    scale: 1.03,
+    rotateY: 2,
+    boxShadow: "0 25px 50px -12px rgb(0 0 0 / 0.25), 0 20px 25px -5px rgb(0 0 0 / 0.1)",
+    transition: {
+      type: "spring" as const,
+      stiffness: 400,
+      damping: 20,
+    }
+  }
+};
+
+// Emoji浮动动画
+export const emojiFloat = {
+  rest: {
+    y: 0,
+    scale: 1,
+    transition: TRANSITIONS.fast,
+  },
+  hover: {
+    y: -8,
+    scale: 1.15,
+    transition: {
+      type: "spring" as const,
+      stiffness: 300,
+      damping: 10,
+    }
+  }
+};
+
+// 行业卡片交错动画
+export const industryStagger: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};

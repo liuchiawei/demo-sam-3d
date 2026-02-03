@@ -10,7 +10,8 @@
       "Skill(frontend-design:frontend-design)",
       "Skill(vercel-react-best-practices)",
       "Skill(web-design-guidelines)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(npx tsc:*)"
     ]
   }
 }

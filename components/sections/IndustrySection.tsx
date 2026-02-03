@@ -2,39 +2,35 @@
 
 import { motion } from "motion/react";
 import { messages } from "@/lib/messages";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
-import { staggerContainer, fadeInUp } from "@/lib/animations";
-import { Factory, ShoppingBag, Heart, Shield } from "lucide-react";
+import { staggerContainer, fadeInUp, industryStagger } from "@/lib/animations";
+import { IndustryCard } from "@/components/industry";
 
 export function IndustrySection() {
   const industries = [
     {
-      icon: <Factory className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
+      emoji: "🏭",
+      emojiLabel: "Factory building",
       title: messages.industries.manufacturing.title,
       description: messages.industries.manufacturing.description,
       detail: messages.industries.manufacturing.detail,
     },
     {
-      icon: (
-        <ShoppingBag className="h-12 w-12 text-blue-800 dark:text-blue-400" />
-      ),
+      emoji: "🛒",
+      emojiLabel: "Shopping cart",
       title: messages.industries.retail.title,
       description: messages.industries.retail.description,
       detail: messages.industries.retail.detail,
     },
     {
-      icon: <Heart className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
+      emoji: "⚕️",
+      emojiLabel: "Medical symbol",
       title: messages.industries.medical.title,
       description: messages.industries.medical.description,
       detail: messages.industries.medical.detail,
     },
     {
-      icon: <Shield className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
+      emoji: "🛡️",
+      emojiLabel: "Shield",
       title: messages.industries.security.title,
       description: messages.industries.security.description,
       detail: messages.industries.security.detail,
@@ -72,23 +68,11 @@ export function IndustrySection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          variants={staggerContainer}
+          variants={industryStagger}
+          style={{ perspective: "1000px" }}
         >
           {industries.map((industry, index) => (
-            <motion.div key={index} variants={fadeInUp}>
-              <Card className="h-full p-4 md:p-6 lg:p-8 xl:p-10 gap-2 justify-center bg-card transition-colors hover:border-blue-800/50 dark:hover:border-blue-400/50">
-                <div className="flex justify-center">{industry.icon}</div>
-                <CardTitle className="text-center text-xl">
-                  {industry.title}
-                </CardTitle>
-                <CardDescription className="text-center">
-                  {industry.description}
-                </CardDescription>
-                <p className="text-center text-xs text-muted-foreground/70">
-                  {industry.detail}
-                </p>
-              </Card>
-            </motion.div>
+            <IndustryCard key={index} {...industry} index={index} />
           ))}
         </motion.div>
       </div>
