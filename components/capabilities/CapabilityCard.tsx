@@ -25,6 +25,8 @@ interface CapabilityCardProps {
   show3DDialog?: boolean;
   icon?: React.ReactNode;
   poster?: string;
+  /** 影片在卡片預覽中的對齊（object-position），例如 "left" 可保留左側物件 */
+  videoObjectPosition?: "left" | "center" | "right";
 }
 
 const isClickable = (p: { videoSrc?: string; show3DDialog?: boolean }) =>
@@ -39,6 +41,7 @@ export function CapabilityCard({
   show3DDialog,
   icon,
   poster,
+  videoObjectPosition,
 }: CapabilityCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [is3DDialogOpen, setIs3DDialogOpen] = useState(false);
@@ -77,6 +80,7 @@ export function CapabilityCard({
                 className="h-full w-full"
                 muted
                 loop
+                objectPosition={videoObjectPosition}
               />
 
               {/* 播放按钮覆盖层 */}

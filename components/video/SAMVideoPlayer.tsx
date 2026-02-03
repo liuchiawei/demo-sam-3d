@@ -13,9 +13,17 @@ interface SAMVideoPlayerProps {
   muted?: boolean;
   loop?: boolean;
   controls?: boolean;
+  /** 影片在容器內的對齊位置（object-position），例如左側物件時用 "left" */
+  objectPosition?: "left" | "center" | "right";
   onPlay?: () => void;
   onPause?: () => void;
 }
+
+const objectPositionClass = {
+  left: "object-left",
+  center: "object-center",
+  right: "object-right",
+} as const;
 
 export function SAMVideoPlayer({
   src,
@@ -25,6 +33,7 @@ export function SAMVideoPlayer({
   muted = VIDEO_CONFIG.muted,
   loop = VIDEO_CONFIG.loop,
   controls = false,
+  objectPosition = "center",
   onPlay,
   onPause,
 }: SAMVideoPlayerProps) {
@@ -87,7 +96,8 @@ export function SAMVideoPlayer({
         poster={poster}
         className={cn(
           "h-full w-full object-cover transition-opacity duration-300",
-          isLoaded ? "opacity-100" : "opacity-0"
+          objectPositionClass[objectPosition],
+          isLoaded ? "opacity-100" : "opacity-0",
         )}
         muted={muted}
         loop={loop}
@@ -104,7 +114,7 @@ export function SAMVideoPlayer({
         <div
           className={cn(
             "absolute bottom-2 right-2 rounded-full bg-black/50 px-2 py-1 text-xs text-white transition-opacity",
-            isPlaying ? "opacity-0" : "opacity-100"
+            isPlaying ? "opacity-0" : "opacity-100",
           )}
         >
           {isPlaying ? "再生中" : "一時停止"}

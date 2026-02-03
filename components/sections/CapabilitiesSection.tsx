@@ -5,7 +5,16 @@ import { messages } from "@/lib/messages";
 import { PATHS } from "@/lib/constants";
 import { CapabilityCard } from "@/components/capabilities/CapabilityCard";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
-import { Box, Sparkles, Layers, Shield, Route, Cuboid } from "lucide-react";
+import {
+  Box,
+  Sparkles,
+  Layers,
+  Shield,
+  Route,
+  Cuboid,
+  Moon,
+  ScanSearch,
+} from "lucide-react";
 
 export function CapabilitiesSection() {
   const capabilities = [
@@ -53,6 +62,23 @@ export function CapabilitiesSection() {
       videoSrc: PATHS.videos.tracking,
       icon: <Route className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
+    {
+      title: messages.capabilities.dark.title,
+      description: messages.capabilities.dark.description,
+      detail: messages.capabilities.dark.detail,
+      videoSrc: PATHS.videos.dark,
+      videoObjectPosition: "left" as const,
+      icon: <Moon className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
+    },
+    {
+      title: messages.capabilities.mini.title,
+      description: messages.capabilities.mini.description,
+      detail: messages.capabilities.mini.detail,
+      videoSrc: PATHS.videos.mini,
+      icon: (
+        <ScanSearch className="h-12 w-12 text-blue-800 dark:text-blue-400" />
+      ),
+    },
   ];
 
   return (
@@ -72,7 +98,10 @@ export function CapabilitiesSection() {
           >
             {messages.capabilities.title}
           </motion.h2>
-          <motion.p className="text-xl text-muted-foreground" variants={fadeInUp}>
+          <motion.p
+            className="text-xl text-muted-foreground"
+            variants={fadeInUp}
+          >
             {messages.capabilities.subtitle}
           </motion.p>
         </motion.div>

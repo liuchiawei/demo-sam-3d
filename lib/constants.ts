@@ -16,6 +16,8 @@ export const PATHS = {
     mosaic: "/videos/sam_demo_0203_04_mosaic.mp4",
     tracking: "/videos/sam_demo_0203_05_tracking.mp4",
     scene3d: "/videos/sam_demo_0203_02_heatmap.mp4",
+    mini: "/videos/sam_demo_0203_06_mini.mp4",
+    dark: "/videos/sam_demo_0203_07_dark.mp4",
   },
   images: {
     demoScene: "/models/demo_scene.png",
