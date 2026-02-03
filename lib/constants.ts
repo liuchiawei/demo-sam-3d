@@ -14,6 +14,8 @@ export const PATHS = {
     background: "/videos/sam_demo_0203_03_pixelate_background.mp4",
     visualEffect: "/videos/sam_demo_0203_01.mp4",
     mosaic: "/videos/sam_demo_0203_04_mosaic.mp4",
+    tracking: "/videos/sam_demo_0203_05_tracking.mp4",
+    scene3d: "/videos/sam_demo_0203_02_heatmap.mp4",
   },
   images: {
     demoScene: "/models/demo_scene.png",

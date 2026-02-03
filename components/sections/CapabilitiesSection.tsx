@@ -5,7 +5,7 @@ import { messages } from "@/lib/messages";
 import { PATHS } from "@/lib/constants";
 import { CapabilityCard } from "@/components/capabilities/CapabilityCard";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
-import { Box, Sparkles, Layers, Shield } from "lucide-react";
+import { Box, Sparkles, Layers, Shield, Route, Cuboid } from "lucide-react";
 
 export function CapabilitiesSection() {
   const capabilities = [
@@ -16,6 +16,13 @@ export function CapabilitiesSection() {
       thumbnailSrc: PATHS.images.demoScene,
       show3DDialog: true,
       icon: <Box className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
+    },
+    {
+      title: messages.capabilities.scene3d.title,
+      description: messages.capabilities.scene3d.description,
+      detail: messages.capabilities.scene3d.detail,
+      videoSrc: PATHS.videos.scene3d,
+      icon: <Cuboid className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
       title: messages.capabilities.visualEffect.title,
@@ -37,6 +44,13 @@ export function CapabilitiesSection() {
       detail: messages.capabilities.mosaic.detail,
       videoSrc: PATHS.videos.mosaic,
       icon: <Shield className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
+    },
+    {
+      title: messages.capabilities.tracking.title,
+      description: messages.capabilities.tracking.description,
+      detail: messages.capabilities.tracking.detail,
+      videoSrc: PATHS.videos.tracking,
+      icon: <Route className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
   ];
 
