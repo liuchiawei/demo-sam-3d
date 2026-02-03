@@ -5,7 +5,7 @@ import { messages } from "@/lib/messages";
 import { PATHS } from "@/lib/constants";
 import { CapabilityCard } from "@/components/capabilities/CapabilityCard";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
-import { Box, Activity, Layers, MessageSquare } from "lucide-react";
+import { Box, Sparkles, Layers, Shield } from "lucide-react";
 
 export function CapabilitiesSection() {
   const capabilities = [
@@ -15,33 +15,33 @@ export function CapabilitiesSection() {
       detail: messages.capabilities.extraction.detail,
       thumbnailSrc: PATHS.images.demoScene,
       show3DDialog: true,
-      icon: <Box className="h-12 w-12 text-green-500" />,
+      icon: <Box className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
-      title: messages.capabilities.heatmap.title,
-      description: messages.capabilities.heatmap.description,
-      detail: messages.capabilities.heatmap.detail,
-      videoSrc: PATHS.videos.heatmap,
-      icon: <Activity className="h-12 w-12 text-green-500" />,
+      title: messages.capabilities.visualEffect.title,
+      description: messages.capabilities.visualEffect.description,
+      detail: messages.capabilities.visualEffect.detail,
+      videoSrc: PATHS.videos.visualEffect,
+      icon: <Sparkles className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
       title: messages.capabilities.background.title,
       description: messages.capabilities.background.description,
       detail: messages.capabilities.background.detail,
       videoSrc: PATHS.videos.background,
-      icon: <Layers className="h-12 w-12 text-green-500" />,
+      icon: <Layers className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
-      title: messages.capabilities.prompt.title,
-      description: messages.capabilities.prompt.description,
-      detail: messages.capabilities.prompt.detail,
-      videoSrc: PATHS.videos.prompt,
-      icon: <MessageSquare className="h-12 w-12 text-green-500" />,
+      title: messages.capabilities.mosaic.title,
+      description: messages.capabilities.mosaic.description,
+      detail: messages.capabilities.mosaic.detail,
+      videoSrc: PATHS.videos.mosaic,
+      icon: <Shield className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
   ];
 
   return (
-    <section className="bg-neutral-950 py-20 lg:py-32">
+    <section className="bg-background py-20 lg:py-32">
       <div className="container mx-auto px-4">
         {/* 标题 */}
         <motion.div
@@ -52,12 +52,12 @@ export function CapabilitiesSection() {
           variants={staggerContainer}
         >
           <motion.h2
-            className="mb-4 text-4xl font-bold text-white lg:text-5xl"
+            className="mb-4 text-4xl font-bold text-foreground lg:text-5xl"
             variants={fadeInUp}
           >
             {messages.capabilities.title}
           </motion.h2>
-          <motion.p className="text-xl text-neutral-400" variants={fadeInUp}>
+          <motion.p className="text-xl text-muted-foreground" variants={fadeInUp}>
             {messages.capabilities.subtitle}
           </motion.p>
         </motion.div>
@@ -85,7 +85,7 @@ export function CapabilitiesSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <p className="text-sm text-neutral-500">
+          <p className="text-sm text-muted-foreground/60">
             ※ カードをクリックしてフルスクリーンで視聴
           </p>
         </motion.div>

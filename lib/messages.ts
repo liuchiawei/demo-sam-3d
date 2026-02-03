@@ -5,9 +5,10 @@
 
 export const messages = {
   hero: {
-    title: "あらゆる画像を瞬時に理解",
-    subtitle: "AIが意図を理解する画像セグメンテーション",
-    description: "Meta SAMは、自然言語やクリックだけで、画像内の任意のオブジェクトを正確に分割します",
+    title: "AICE x SAM",
+    subtitle: "あらゆる映像を瞬時に理解、分析、編集",
+    description:
+      "Meta SAMは、自然言語やクリックだけで、映像内の任意のオブジェクトを正確に分割します",
     cta: "デモを見る",
     scrollHint: "下にスクロール",
   },
@@ -35,22 +36,26 @@ export const messages = {
     extraction: {
       title: "3Dオブジェクト抽出",
       description: "2D画像から独立した3Dオブジェクトを識別・抽出",
-      detail: "平面画像から空間情報を理解し、個別のオブジェクトとして抽出します",
+      detail:
+        "平面画像から空間情報を理解し、個別のオブジェクトとして抽出します",
     },
-    heatmap: {
-      title: "ヒートマップ分析",
-      description: "AI判断の信頼度を可視化",
-      detail: "セグメンテーション結果の信頼度をヒートマップで表示し、透明性を確保します",
+    visualEffect: {
+      title: "ビジュアルエフェクト",
+      description: "AIで選択した部分に様々なエフェクトを編集",
+      detail:
+        "選択したオブジェクトにフィルターやエフェクトを適用して表現を拡張できます",
     },
     background: {
       title: "背景分離",
       description: "前景を正確に分離し、プライバシーを保護",
-      detail: "オブジェクトと背景を精密に分割し、ピクセル化やぼかし効果を適用できます",
+      detail:
+        "オブジェクトと背景を精密に分割し、ピクセル化やぼかし効果を適用できます",
     },
-    prompt: {
-      title: "プロンプト駆動分割",
-      description: "自然言語で説明するだけでAIが自動分割",
-      detail: "テキスト、クリック、または矩形選択でオブジェクトを指定できます",
+    mosaic: {
+      title: "モザイク処理",
+      description: "センシティブなオブジェクトを選択してプライバシーを保護",
+      detail:
+        "選択した領域にモザイクやぼかしを適用し、個人情報や機密情報を保護できます",
     },
   },
 
@@ -137,7 +142,8 @@ export const messages = {
   cta: {
     title: "SAMを今すぐ体験",
     subtitle: "貴社のビジネスに最適なソリューションをご提案します",
-    description: "お気軽にお問い合わせください。専門チームが詳しくご説明いたします。",
+    description:
+      "お気軽にお問い合わせください。専門チームが詳しくご説明いたします。",
     form: {
       name: {
         label: "名前",

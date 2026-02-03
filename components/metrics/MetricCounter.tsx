@@ -45,15 +45,15 @@ export function MetricCounter({
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <div className="mb-2 text-5xl font-bold text-white lg:text-6xl">
+      <div className="mb-2 text-5xl font-bold text-foreground lg:text-6xl">
         <motion.span>{rounded}</motion.span>
-        <span className="text-green-500">{unit}</span>
+        <span className="text-blue-800 dark:text-blue-400">{unit}</span>
       </div>
-      <div className="mb-1 text-lg font-semibold text-neutral-300">
+      <div className="mb-1 text-lg font-semibold text-foreground/80">
         {label}
       </div>
       {description && (
-        <div className="text-sm text-neutral-400">{description}</div>
+        <div className="text-sm text-muted-foreground">{description}</div>
       )}
     </motion.div>
   );

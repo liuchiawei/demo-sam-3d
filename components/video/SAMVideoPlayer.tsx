@@ -73,11 +73,11 @@ export function SAMVideoPlayer({
   };
 
   return (
-    <div className={cn("relative overflow-hidden rounded-lg", className)}>
+    <div className={cn("relative overflow-hidden", className)}>
       {/* 加载指示器 */}
       {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center bg-neutral-900/50">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-neutral-600 border-t-white" />
+        <div className="absolute inset-0 flex items-center justify-center bg-muted/70">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-muted border-t-white" />
         </div>
       )}
 

@@ -10,9 +10,10 @@ export const PATHS = {
     worker2: "/models/object_2_worker_2.glb",
   },
   videos: {
-    prompt: "/videos/sam_demo_0203_01.mp4",
-    heatmap: "/videos/sam_demo_0203_02_heatmap.mp4",
+    extraction: "/videos/sam_demo_0203_02_heatmap.mp4",
     background: "/videos/sam_demo_0203_03_pixelate_background.mp4",
+    visualEffect: "/videos/sam_demo_0203_01.mp4",
+    mosaic: "/videos/sam_demo_0203_04_mosaic.mp4",
   },
   images: {
     demoScene: "/models/demo_scene.png",

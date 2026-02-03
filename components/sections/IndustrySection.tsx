@@ -9,25 +9,25 @@ import { Factory, ShoppingBag, Heart, Shield } from "lucide-react";
 export function IndustrySection() {
   const industries = [
     {
-      icon: <Factory className="h-12 w-12 text-green-500" />,
+      icon: <Factory className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
       title: messages.industries.manufacturing.title,
       description: messages.industries.manufacturing.description,
       detail: messages.industries.manufacturing.detail,
     },
     {
-      icon: <ShoppingBag className="h-12 w-12 text-green-500" />,
+      icon: <ShoppingBag className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
       title: messages.industries.retail.title,
       description: messages.industries.retail.description,
       detail: messages.industries.retail.detail,
     },
     {
-      icon: <Heart className="h-12 w-12 text-green-500" />,
+      icon: <Heart className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
       title: messages.industries.medical.title,
       description: messages.industries.medical.description,
       detail: messages.industries.medical.detail,
     },
     {
-      icon: <Shield className="h-12 w-12 text-green-500" />,
+      icon: <Shield className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
       title: messages.industries.security.title,
       description: messages.industries.security.description,
       detail: messages.industries.security.detail,
@@ -35,7 +35,7 @@ export function IndustrySection() {
   ];
 
   return (
-    <section className="bg-neutral-950 py-20 lg:py-32">
+    <section className="bg-background py-20 lg:py-32">
       <div className="container mx-auto px-4">
         {/* 标题 */}
         <motion.div
@@ -46,13 +46,13 @@ export function IndustrySection() {
           variants={staggerContainer}
         >
           <motion.h2
-            className="mb-4 text-4xl font-bold text-white lg:text-5xl"
+            className="mb-4 text-4xl font-bold text-foreground lg:text-5xl"
             variants={fadeInUp}
           >
             {messages.industries.title}
           </motion.h2>
           <motion.p
-            className="text-xl text-neutral-400"
+            className="text-xl text-muted-foreground"
             variants={fadeInUp}
           >
             {messages.industries.subtitle}
@@ -69,7 +69,7 @@ export function IndustrySection() {
         >
           {industries.map((industry, index) => (
             <motion.div key={index} variants={fadeInUp}>
-              <Card className="h-full border-neutral-800 bg-neutral-900/50 backdrop-blur transition-colors hover:border-green-500/50">
+              <Card className="h-full bg-card transition-colors hover:border-blue-800/50 dark:hover:border-blue-400/50">
                 <CardHeader className="space-y-4">
                   <div className="flex justify-center">{industry.icon}</div>
                   <CardTitle className="text-center text-xl text-white">

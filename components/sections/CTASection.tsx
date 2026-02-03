@@ -192,7 +192,7 @@ export function CTASection() {
               {/* 提交按钮 */}
               <Button
                 type="submit"
-                className="w-full bg-green-500 text-white hover:bg-green-600"
+                className="w-full bg-blue-800 text-white hover:bg-blue-900 dark:bg-blue-400 dark:hover:bg-blue-500"
                 disabled={isSubmitting}
               >
                 {isSubmitting

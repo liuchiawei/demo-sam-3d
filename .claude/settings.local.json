@@ -6,7 +6,10 @@
       "Bash(npx shadcn@latest add:*)",
       "Bash(npx shadcn-ui@latest add:*)",
       "Bash(pnpm dlx:*)",
-      "Bash(pnpm dev:*)"
+      "Bash(pnpm dev:*)",
+      "Skill(frontend-design:frontend-design)",
+      "Skill(vercel-react-best-practices)",
+      "Skill(web-design-guidelines)"
     ]
   }
 }

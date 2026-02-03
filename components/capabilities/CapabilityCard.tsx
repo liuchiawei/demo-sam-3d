@@ -55,10 +55,10 @@ export function CapabilityCard({
         whileHover="hover"
         animate="rest"
         variants={cardHover}
-        className="group"
+        className="group rounded-xl"
       >
         <Card
-          className="h-full overflow-hidden border-neutral-800 bg-neutral-900/50 backdrop-blur transition-colors hover:border-green-500/50"
+          className="h-full pt-0 overflow-hidden border-border bg-card/50 backdrop-blur transition-colors hover:border-blue-800/50 dark:hover:border-blue-400/50"
           style={{
             cursor: isClickable({ videoSrc, show3DDialog })
               ? "pointer"
@@ -81,13 +81,13 @@ export function CapabilityCard({
 
               {/* 播放按钮覆盖层 */}
               <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
-                <div className="rounded-full bg-green-500 p-4">
+                <div className="rounded-full bg-blue-800 dark:bg-blue-400 p-4">
                   <Play className="h-6 w-6 text-white" fill="white" />
                 </div>
               </div>
             </div>
           ) : thumbnailSrc ? (
-            <div className="relative aspect-video overflow-hidden bg-neutral-800">
+            <div className="relative aspect-video overflow-hidden bg-muted">
               <Image
                 src={thumbnailSrc}
                 alt=""
@@ -97,17 +97,17 @@ export function CapabilityCard({
               />
               {show3DDialog && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
-                  <div className="rounded-full bg-green-500 p-4">
+                  <div className="rounded-full bg-blue-800 dark:bg-blue-400 p-4">
                     <BoxIcon className="h-6 w-6 text-white" />
                   </div>
                 </div>
               )}
             </div>
           ) : (
-            <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-neutral-800 to-neutral-900">
+            <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-muted to-muted/50">
               {icon || (
-                <div className="h-16 w-16 rounded-full bg-green-500/20 p-4">
-                  <div className="h-full w-full rounded-full bg-green-500" />
+                <div className="h-16 w-16 rounded-full bg-blue-800/20 dark:bg-blue-400/20 p-4">
+                  <div className="h-full w-full rounded-full bg-blue-800 dark:bg-blue-400" />
                 </div>
               )}
             </div>
@@ -115,15 +115,15 @@ export function CapabilityCard({
 
           {/* 内容区域 */}
           <CardHeader>
-            <CardTitle className="text-xl text-white">{title}</CardTitle>
-            <CardDescription className="text-neutral-400">
+            <CardTitle className="text-xl text-foreground">{title}</CardTitle>
+            <CardDescription className="text-muted-foreground">
               {description}
             </CardDescription>
           </CardHeader>
 
           {detail && (
             <CardContent>
-              <p className="text-sm text-neutral-500">{detail}</p>
+              <p className="text-sm text-muted-foreground/70">{detail}</p>
             </CardContent>
           )}
         </Card>
