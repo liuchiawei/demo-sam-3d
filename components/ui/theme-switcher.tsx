@@ -23,15 +23,12 @@ export function ThemeSwitcher() {
   return (
     <motion.button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="relative h-9 w-9 rounded-lg bg-card/80 backdrop-blur-md border border-border/50 shadow-sm overflow-hidden group"
+      className="relative size-9 rounded-lg bg-card/20 backdrop-blur-xs border border-border/50 shadow-sm overflow-hidden group"
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       transition={{ duration: 0.2 }}
     >
-      {/* Background gradient on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 to-foreground/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
       {/* Sun icon */}
       <motion.div
         className="absolute inset-0 flex items-center justify-center"
@@ -48,7 +45,7 @@ export function ThemeSwitcher() {
           height="18"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="white"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
