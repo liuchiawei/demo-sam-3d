@@ -8,9 +8,17 @@ interface VideoModalProps {
   onClose: () => void;
   src: string;
   poster?: string;
+  /** 影片在容器內的對齊位置（object-position） */
+  objectPosition?: "left" | "center" | "right";
 }
 
-export function VideoModal({ isOpen, onClose, src, poster }: VideoModalProps) {
+export function VideoModal({
+  isOpen,
+  onClose,
+  src,
+  poster,
+  objectPosition,
+}: VideoModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="p-0 overflow-hidden">
@@ -20,6 +28,7 @@ export function VideoModal({ isOpen, onClose, src, poster }: VideoModalProps) {
           className="aspect-video"
           controls
           autoPlay
+          objectPosition={objectPosition}
         />
       </DialogContent>
     </Dialog>

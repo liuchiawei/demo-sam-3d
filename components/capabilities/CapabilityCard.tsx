@@ -140,6 +140,7 @@ export function CapabilityCard({
           onClose={() => setIsModalOpen(false)}
           src={videoSrc}
           poster={poster}
+          objectPosition={videoObjectPosition}
         />
       )}
 
