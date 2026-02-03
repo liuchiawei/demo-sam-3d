@@ -73,14 +73,7 @@ export default function RootLayout({
       <body
         className={`${notoSansJP.variable} ${ibmPlexSans.variable} ${jetBrainsMono.variable} antialiased font-sans`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange={false}
-        >
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
