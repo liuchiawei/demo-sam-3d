@@ -30,32 +30,30 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "SAM サービス紹介 | AICE Inc.",
+    default: "AI物体検知サービス紹介 | AICE Inc.",
     template: "%s | AICE Inc.",
   },
   description:
-    "AICE Inc. による Meta SAM（Segment Anything Model）のサービスデモ。AI画像セグメンテーション、3Dオブジェクト抽出、ヒートマップ分析、背景分離など、最先端の技術でビジネスを革新します。",
+    "AICE Inc. によるAI物体検知のサービスデモ。AI画像セグメンテーション、3Dオブジェクト抽出、ヒートマップ分析、背景分離など、最先端の技術でビジネスを革新します。",
   keywords: [
     "AICE",
-    "SAM",
-    "Segment Anything Model",
-    "画像セグメンテーション",
+    "物体検知",
     "AI",
-    "Meta SAM",
+    "AI物体検知", 
   ],
   authors: [{ name: "AICE Inc." }],
   creator: "AICE Inc.",
   openGraph: {
-    title: "SAM サービス紹介 | AICE Inc.",
+    title: "AI物体検知サービス紹介 | AICE Inc.",
     description:
-      "AICE Inc. による Meta SAM のサービスデモ。AI画像セグメンテーションでビジネスを革新。",
+      "AICE Inc. によるAI物体検知のサービスデモ。AI画像セグメンテーションでビジネスを革新。",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SAM サービス紹介 | AICE Inc.",
+    title: "AI物体検知サービス紹介 | AICE Inc.",
     description:
-      "AICE Inc. による Meta SAM のサービスデモ。AI画像セグメンテーションでビジネスを革新。",
+      "AICE Inc. によるAI物体検知のサービスデモ。AI画像セグメンテーションでビジネスを革新。",
   },
   robots: {
     index: true,

@@ -5,10 +5,10 @@
 
 export const messages = {
   hero: {
-    title: "AICE x SAM",
+    title: "AICE × 物体検知",
     subtitle: "あらゆる映像を瞬時に理解、分析、編集",
     description:
-      "Meta SAMは、自然言語やクリックだけで、映像内の任意のオブジェクトを正確に分割します",
+      "AIdで自然言語やクリックだけで、映像内の任意のオブジェクトを正確に分割します",
     cta: "デモを見る",
     scrollHint: "下にスクロール",
   },
@@ -31,7 +31,7 @@ export const messages = {
   },
 
   capabilities: {
-    title: "SAMの主要機能",
+    title: "物体検知の主要機能",
     subtitle: "最先端のAI技術で画像処理を革新",
     extraction: {
       title: "3Dオブジェクト抽出",
@@ -152,7 +152,7 @@ export const messages = {
   },
 
   cta: {
-    title: "SAMを今すぐ体験",
+    title: "今すぐ体験",
     subtitle: "貴社のビジネスに最適なソリューションをご提案します",
     description:
       "お気軽にお問い合わせください。専門チームが詳しくご説明いたします。",
