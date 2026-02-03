@@ -2,7 +2,12 @@
 
 import { motion } from "motion/react";
 import { messages } from "@/lib/messages";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
 import { Factory, ShoppingBag, Heart, Shield } from "lucide-react";
 
@@ -15,7 +20,9 @@ export function IndustrySection() {
       detail: messages.industries.manufacturing.detail,
     },
     {
-      icon: <ShoppingBag className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
+      icon: (
+        <ShoppingBag className="h-12 w-12 text-blue-800 dark:text-blue-400" />
+      ),
       title: messages.industries.retail.title,
       description: messages.industries.retail.description,
       detail: messages.industries.retail.detail,
@@ -69,19 +76,17 @@ export function IndustrySection() {
         >
           {industries.map((industry, index) => (
             <motion.div key={index} variants={fadeInUp}>
-              <Card className="h-full bg-card transition-colors hover:border-blue-800/50 dark:hover:border-blue-400/50">
-                <CardHeader className="space-y-4">
-                  <div className="flex justify-center">{industry.icon}</div>
-                  <CardTitle className="text-center text-xl text-white">
-                    {industry.title}
-                  </CardTitle>
-                  <CardDescription className="text-center">
-                    {industry.description}
-                  </CardDescription>
-                  <p className="text-center text-sm text-neutral-500">
-                    {industry.detail}
-                  </p>
-                </CardHeader>
+              <Card className="h-full p-4 md:p-6 lg:p-8 xl:p-10 gap-2 justify-center bg-card transition-colors hover:border-blue-800/50 dark:hover:border-blue-400/50">
+                <div className="flex justify-center">{industry.icon}</div>
+                <CardTitle className="text-center text-xl">
+                  {industry.title}
+                </CardTitle>
+                <CardDescription className="text-center">
+                  {industry.description}
+                </CardDescription>
+                <p className="text-center text-xs text-muted-foreground/70">
+                  {industry.detail}
+                </p>
               </Card>
             </motion.div>
           ))}

@@ -106,7 +106,7 @@ export function HeroSection() {
       {/* Scroll indicator — button for actions per a11y guidelines */}
       <motion.button
         type="button"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer touch-manipulation text-center outline-none hover:text-neutral-200 focus-visible:rounded focus-visible:ring-2 focus-visible:ring-blue-800 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer touch-manipulation text-center outline-none hover:text-foreground/50 focus-visible:rounded focus-visible:ring-2 focus-visible:ring-blue-800 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
         aria-label={messages.hero.scrollHint}
         initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ export function HeroSection() {
         onClick={scrollToNext}
         onKeyDown={handleScrollKeyDown}
       >
-        <span className="mb-2 block text-sm text-neutral-400">
+        <span className="mb-2 block text-sm">
           {messages.hero.scrollHint}
         </span>
         <motion.span
