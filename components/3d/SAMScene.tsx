@@ -91,7 +91,7 @@ function BackgroundPlane() {
   const texture = useTexture(PATHS.images.demoScene);
 
   return (
-    <mesh position={[0, 0, -5]} rotation={[0, 0, 0]}>
+    <mesh position={[-2, -3, 1]} rotation={[-Math.PI / 2, 0, 0]}>
       <planeGeometry args={[16, 9]} />
       <meshBasicMaterial map={texture} toneMapped={false} />
     </mesh>
@@ -122,7 +122,7 @@ function Scene() {
       <Suspense fallback={null}>
         <Model
           url={PATHS.models.worker1}
-          position={[-2, -0.5, 2]}
+          position={[-1.2, -0.7, 1.75]}
           rotation={[0, Math.PI / 4, 0]}
           scale={1.4}
           onHover={(hovered) => console.log("Worker 1 hovered:", hovered)}
@@ -131,16 +131,16 @@ function Scene() {
 
         <Model
           url={PATHS.models.bag}
-          position={[0, 0, 0.5]}
-          scale={0.8}
+          position={[0, 0.2, 0.5]}
+          scale={1.2}
           onHover={(hovered) => console.log("Bag hovered:", hovered)}
           onClick={() => setSelectedModel("bag")}
         />
 
         <Model
           url={PATHS.models.worker2}
-          position={[2, -0.5, 2]}
-          rotation={[0, - Math.PI / 6, 0]}
+          position={[2, -0.5, 0]}
+          rotation={[0, -Math.PI / 6, 0]}
           scale={1}
           onHover={(hovered) => console.log("Worker 2 hovered:", hovered)}
           onClick={() => setSelectedModel("worker2")}

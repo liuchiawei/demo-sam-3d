@@ -13,7 +13,7 @@ export function CapabilitiesSection() {
       title: messages.capabilities.extraction.title,
       description: messages.capabilities.extraction.description,
       detail: messages.capabilities.extraction.detail,
-      thumbnailSrc: PATHS.images.demoScene,
+      videoSrc: PATHS.videos.scene3d,
       show3DDialog: true,
       icon: <Box className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
@@ -21,7 +21,8 @@ export function CapabilitiesSection() {
       title: messages.capabilities.scene3d.title,
       description: messages.capabilities.scene3d.description,
       detail: messages.capabilities.scene3d.detail,
-      videoSrc: PATHS.videos.scene3d,
+      thumbnailSrc: PATHS.images.demoScene,
+      show3DDialog: true,
       icon: <Cuboid className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
