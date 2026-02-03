@@ -15,7 +15,6 @@ export function Footer() {
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between sm:gap-6">
-          <p className="text-sm tabular-nums text-muted-foreground">{rights}</p>
           <nav
             className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1"
             aria-label="Footer navigation"
@@ -30,6 +29,7 @@ export function Footer() {
               {officialWebsite}
             </a>
           </nav>
+          <p className="text-sm tabular-nums text-muted-foreground">{rights}</p>
         </div>
       </div>
     </footer>
