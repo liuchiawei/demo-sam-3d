@@ -3,7 +3,7 @@ import { messages } from "@/lib/messages";
 const OFFICIAL_URL = "https://aice.co.jp/";
 
 const linkClass =
-  "text-sm text-muted-foreground underline decoration-border underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground/40 focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  "text-md font-bold text-blue-800 dark:text-blue-400 underline decoration-border underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground/40 focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 export function Footer() {
   const { rights, officialWebsite, privacy, terms } = messages.footer;

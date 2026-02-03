@@ -189,7 +189,7 @@ export const messages = {
     rights: "© 2026 AICE Inc. All rights reserved.",
     privacy: "プライバシーポリシー",
     terms: "利用規約",
-    officialWebsite: "公式ウェブサイト",
+    officialWebsite: "AICE",
   },
 };
 
