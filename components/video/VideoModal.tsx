@@ -1,6 +1,8 @@
 "use client";
 
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { MODAL_CONTENT_LARGE_CLASS } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import { SAMVideoPlayer } from "./SAMVideoPlayer";
 
 interface VideoModalProps {
@@ -21,15 +23,22 @@ export function VideoModal({
 }: VideoModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="p-0 overflow-hidden">
-        <SAMVideoPlayer
-          src={src}
-          poster={poster}
-          className="aspect-video"
-          controls
-          autoPlay
-          objectPosition={objectPosition}
-        />
+      <DialogContent
+        className={cn(
+          "flex flex-col p-0 overflow-hidden",
+          MODAL_CONTENT_LARGE_CLASS,
+        )}
+      >
+        <div className="min-h-0 flex-1">
+          <SAMVideoPlayer
+            src={src}
+            poster={poster}
+            className="aspect-video w-full"
+            controls
+            autoPlay
+            objectPosition={objectPosition}
+          />
+        </div>
       </DialogContent>
     </Dialog>
   );

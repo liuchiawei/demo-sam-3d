@@ -91,3 +91,7 @@ export const VIDEO_CONFIG = {
   muted: true,
   playsInline: true,
 } as const;
+
+/** 大尺寸 Modal（VideoModal / Scene3DModal）的 DialogContent 共用 class，覆寫預設 max-w、加上 max-h，關閉鈕 z-10 確保可點 */
+export const MODAL_CONTENT_LARGE_CLASS =
+  "max-w-[calc(100%-2rem)] sm:max-w-[min(90vw,56rem)] lg:max-w-[min(92vw,72rem)] max-h-[90vh] [&_[data-slot=dialog-close]]:relative [&_[data-slot=dialog-close]]:z-10";
