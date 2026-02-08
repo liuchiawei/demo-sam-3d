@@ -11,8 +11,8 @@ export default function Home() {
       <main className="relative scroll-smooth">
         <HeroSection />
         <CapabilitiesSection />
-        <IndustrySection />
-        <MetricsSection />
+        {/* <IndustrySection /> */}
+        {/* <MetricsSection /> */}
         {/* <CTASection /> */}
       </main>
       <Footer />
