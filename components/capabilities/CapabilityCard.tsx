@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import {
@@ -14,7 +14,14 @@ import { SAMVideoPlayer } from "@/components/video/SAMVideoPlayer";
 import { VideoModal } from "@/components/video/VideoModal";
 import { Scene3DModal } from "@/components/3d/Scene3DModal";
 import { cardHover } from "@/lib/animations";
+import { VIDEO_CONFIG } from "@/lib/constants";
 import { Play, Box as BoxIcon } from "lucide-react";
+
+const objectPositionClass = {
+  left: "object-left",
+  center: "object-center",
+  right: "object-right",
+} as const;
 
 interface CapabilityCardProps {
   title: string;
@@ -45,11 +52,33 @@ export function CapabilityCard({
 }: CapabilityCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [is3DDialogOpen, setIs3DDialogOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleClick = () => {
     if (videoSrc) setIsModalOpen(true);
     else if (show3DDialog) setIs3DDialogOpen(true);
   };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    videoRef.current?.pause();
+    setIsHovered(false);
+  };
+
+  // Play when video mounts after hover (ref is set after commit)
+  useEffect(() => {
+    if (!isHovered) return;
+    const t = setTimeout(() => {
+      videoRef.current?.play().catch(() => {});
+    }, 0);
+    return () => clearTimeout(t);
+  }, [isHovered]);
+
+  const pos = videoObjectPosition ?? "center";
 
   return (
     <>
@@ -72,7 +101,40 @@ export function CapabilityCard({
           }
         >
           {/* 视频、缩图或图标区域 */}
-          {videoSrc ? (
+          {videoSrc && thumbnailSrc ? (
+            <div
+              className="relative aspect-video overflow-hidden bg-muted"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              onFocus={handleMouseEnter}
+              onBlur={handleMouseLeave}
+              tabIndex={0}
+            >
+              <Image
+                src={thumbnailSrc}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              {isHovered ? (
+                <video
+                  ref={videoRef}
+                  src={videoSrc}
+                  className={`absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-200 ${objectPositionClass[pos]}`}
+                  muted={VIDEO_CONFIG.muted}
+                  loop={VIDEO_CONFIG.loop}
+                  playsInline={VIDEO_CONFIG.playsInline}
+                  preload={VIDEO_CONFIG.preload}
+                />
+              ) : null}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none">
+                <div className="rounded-full bg-blue-800 dark:bg-blue-400 p-4">
+                  <Play className="h-6 w-6 text-white" fill="white" />
+                </div>
+              </div>
+            </div>
+          ) : videoSrc ? (
             <div className="relative aspect-video overflow-hidden">
               <SAMVideoPlayer
                 src={videoSrc}
@@ -83,7 +145,6 @@ export function CapabilityCard({
                 objectPosition={videoObjectPosition}
               />
 
-              {/* 播放按钮覆盖层 */}
               <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
                 <div className="rounded-full bg-blue-800 dark:bg-blue-400 p-4">
                   <Play className="h-6 w-6 text-white" fill="white" />
@@ -99,17 +160,17 @@ export function CapabilityCard({
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              {show3DDialog && (
+              {show3DDialog ? (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
                   <div className="rounded-full bg-blue-800 dark:bg-blue-400 p-4">
                     <BoxIcon className="h-6 w-6 text-white" />
                   </div>
                 </div>
-              )}
+              ) : null}
             </div>
           ) : (
             <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-muted to-muted/50">
-              {icon || (
+              {icon ?? (
                 <div className="h-16 w-16 rounded-full bg-blue-800/20 dark:bg-blue-400/20 p-4">
                   <div className="h-full w-full rounded-full bg-blue-800 dark:bg-blue-400" />
                 </div>

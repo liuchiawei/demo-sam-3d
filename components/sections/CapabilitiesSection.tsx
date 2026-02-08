@@ -17,12 +17,14 @@ import {
 } from "lucide-react";
 
 export function CapabilitiesSection() {
+  const thumbs = PATHS.images.thumbnails;
   const capabilities = [
     {
       title: messages.capabilities.extraction.title,
       description: messages.capabilities.extraction.description,
       detail: messages.capabilities.extraction.detail,
       videoSrc: PATHS.videos.scene3d,
+      thumbnailSrc: thumbs[0],
       show3DDialog: true,
       icon: <Box className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
@@ -30,7 +32,7 @@ export function CapabilitiesSection() {
       title: messages.capabilities.scene3d.title,
       description: messages.capabilities.scene3d.description,
       detail: messages.capabilities.scene3d.detail,
-      thumbnailSrc: PATHS.images.demoScene,
+      thumbnailSrc: thumbs[1],
       show3DDialog: true,
       icon: <Cuboid className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
@@ -39,6 +41,7 @@ export function CapabilitiesSection() {
       description: messages.capabilities.visualEffect.description,
       detail: messages.capabilities.visualEffect.detail,
       videoSrc: PATHS.videos.visualEffect,
+      thumbnailSrc: thumbs[2],
       icon: <Sparkles className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
@@ -46,6 +49,7 @@ export function CapabilitiesSection() {
       description: messages.capabilities.background.description,
       detail: messages.capabilities.background.detail,
       videoSrc: PATHS.videos.background,
+      thumbnailSrc: thumbs[3],
       icon: <Layers className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
@@ -53,6 +57,7 @@ export function CapabilitiesSection() {
       description: messages.capabilities.mosaic.description,
       detail: messages.capabilities.mosaic.detail,
       videoSrc: PATHS.videos.mosaic,
+      thumbnailSrc: thumbs[4],
       icon: <Shield className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
@@ -60,6 +65,7 @@ export function CapabilitiesSection() {
       description: messages.capabilities.tracking.description,
       detail: messages.capabilities.tracking.detail,
       videoSrc: PATHS.videos.tracking,
+      thumbnailSrc: thumbs[5],
       icon: <Route className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
@@ -67,6 +73,7 @@ export function CapabilitiesSection() {
       description: messages.capabilities.dark.description,
       detail: messages.capabilities.dark.detail,
       videoSrc: PATHS.videos.dark,
+      thumbnailSrc: thumbs[6],
       videoObjectPosition: "left" as const,
       icon: <Moon className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
@@ -75,6 +82,7 @@ export function CapabilitiesSection() {
       description: messages.capabilities.mini.description,
       detail: messages.capabilities.mini.detail,
       videoSrc: PATHS.videos.mini,
+      thumbnailSrc: thumbs[6],
       icon: (
         <ScanSearch className="h-12 w-12 text-blue-800 dark:text-blue-400" />
       ),

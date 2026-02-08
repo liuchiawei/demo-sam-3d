@@ -21,6 +21,15 @@ export const PATHS = {
   },
   images: {
     demoScene: "/models/demo_scene.png",
+    thumbnails: [
+      "/thumbnails/demo-01.jpg",
+      "/thumbnails/demo-02.jpg",
+      "/thumbnails/demo-03.jpg",
+      "/thumbnails/demo-04.jpg",
+      "/thumbnails/demo-05.jpg",
+      "/thumbnails/demo-06.jpg",
+      "/thumbnails/demo-07.jpg",
+    ] as const,
   },
 } as const;
 
