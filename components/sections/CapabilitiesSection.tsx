@@ -38,6 +38,14 @@ export function CapabilitiesSection() {
       icon: <Cuboid className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
+      title: messages.capabilities.objectDetect2.title,
+      description: messages.capabilities.objectDetect2.description,
+      detail: messages.capabilities.objectDetect2.detail,
+      videoSrc: PATHS.videos.objectDetect2,
+      thumbnailSrc: thumbs.objectDetect2,
+      icon: <Target className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
+    },
+    {
       title: messages.capabilities.visualEffect.title,
       description: messages.capabilities.visualEffect.description,
       detail: messages.capabilities.visualEffect.detail,
@@ -79,29 +87,11 @@ export function CapabilitiesSection() {
       icon: <Moon className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
-      title: messages.capabilities.mini.title,
-      description: messages.capabilities.mini.description,
-      detail: messages.capabilities.mini.detail,
-      videoSrc: PATHS.videos.mini,
-      thumbnailSrc: thumbs.mini,
-      icon: (
-        <ScanSearch className="h-12 w-12 text-blue-800 dark:text-blue-400" />
-      ),
-    },
-    {
       title: messages.capabilities.objectDetect1.title,
       description: messages.capabilities.objectDetect1.description,
       detail: messages.capabilities.objectDetect1.detail,
       videoSrc: PATHS.videos.objectDetect1,
       thumbnailSrc: thumbs.objectDetect1,
-      icon: <Target className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
-    },
-    {
-      title: messages.capabilities.objectDetect2.title,
-      description: messages.capabilities.objectDetect2.description,
-      detail: messages.capabilities.objectDetect2.detail,
-      videoSrc: PATHS.videos.objectDetect2,
-      thumbnailSrc: thumbs.objectDetect2,
       icon: <Target className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
@@ -111,6 +101,16 @@ export function CapabilitiesSection() {
       videoSrc: PATHS.videos.objectDetect3,
       thumbnailSrc: thumbs.objectDetect3,
       icon: <Target className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
+    },
+    {
+      title: messages.capabilities.mini.title,
+      description: messages.capabilities.mini.description,
+      detail: messages.capabilities.mini.detail,
+      videoSrc: PATHS.videos.mini,
+      thumbnailSrc: thumbs.mini,
+      icon: (
+        <ScanSearch className="h-12 w-12 text-blue-800 dark:text-blue-400" />
+      ),
     },
   ];
 
@@ -148,7 +148,11 @@ export function CapabilitiesSection() {
           variants={staggerContainer}
         >
           {capabilities.map((capability, index) => (
-            <motion.div key={index} className="flex min-h-0" variants={fadeInUp}>
+            <motion.div
+              key={index}
+              className="flex min-h-0"
+              variants={fadeInUp}
+            >
               <CapabilityCard {...capability} />
             </motion.div>
           ))}
