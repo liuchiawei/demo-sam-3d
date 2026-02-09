@@ -87,10 +87,10 @@ export function CapabilityCard({
         whileHover="hover"
         animate="rest"
         variants={cardHover}
-        className="group rounded-xl"
+        className="group flex h-full rounded-xl"
       >
         <Card
-          className="h-full pt-0 overflow-hidden border-border bg-card/50 backdrop-blur transition-colors hover:border-blue-800/50 dark:hover:border-blue-400/50"
+          className="flex h-full min-h-0 flex-col pt-0 overflow-hidden border-border bg-card/50 backdrop-blur transition-colors hover:border-blue-800/50 dark:hover:border-blue-400/50"
           style={{
             cursor: isClickable({ videoSrc, show3DDialog })
               ? "pointer"
@@ -178,19 +178,21 @@ export function CapabilityCard({
             </div>
           )}
 
-          {/* 内容区域 */}
-          <CardHeader>
-            <CardTitle className="text-xl text-foreground">{title}</CardTitle>
-            <CardDescription className="text-muted-foreground">
-              {description}
-            </CardDescription>
-          </CardHeader>
+          {/* 内容区域：flex-1 min-h-0 確保高度一致，detail 不撐開卡片 */}
+          <div className="flex min-h-0 flex-1 flex-col gap-2">
+            <CardHeader className="flex-shrink-0">
+              <CardTitle className="text-xl text-foreground">{title}</CardTitle>
+              <CardDescription className="text-muted-foreground">
+                {description}
+              </CardDescription>
+            </CardHeader>
 
-          {detail && (
-            <CardContent>
-              <p className="text-sm text-muted-foreground/70">{detail}</p>
-            </CardContent>
-          )}
+            {detail && (
+              <CardContent className="min-h-0 flex-1 pt-0">
+                <p className="line-clamp-4 text-sm text-muted-foreground/70">{detail}</p>
+              </CardContent>
+            )}
+          </div>
         </Card>
       </motion.div>
 

@@ -116,14 +116,14 @@ export function CapabilitiesSection() {
 
         {/* 能力卡片网格 */}
         <motion.div
-          className="grid gap-6 md:grid-cols-2 lg:gap-8"
+          className="grid items-stretch gap-6 md:grid-cols-2 lg:gap-8 lg:grid-cols-3 xl:grid-cols-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={staggerContainer}
         >
           {capabilities.map((capability, index) => (
-            <motion.div key={index} variants={fadeInUp}>
+            <motion.div key={index} className="flex min-h-0" variants={fadeInUp}>
               <CapabilityCard {...capability} />
             </motion.div>
           ))}
