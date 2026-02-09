@@ -204,6 +204,7 @@ export function CapabilityCard({
           src={videoSrc}
           poster={poster}
           objectPosition={videoObjectPosition}
+          title={title}
         />
       )}
 
