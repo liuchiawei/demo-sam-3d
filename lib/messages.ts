@@ -8,7 +8,7 @@ export const messages = {
     title: "AICE × 物体検知",
     subtitle: "あらゆる映像を瞬時に理解、分析、編集",
     description:
-      "AIdで自然言語やクリックだけで、映像内の任意のオブジェクトを正確に分割します",
+      "AIで自然言語やクリックだけで、映像内の任意のオブジェクトを正確に分割します",
     cta: "デモを見る",
     scrollHint: "下にスクロール",
   },
