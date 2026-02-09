@@ -129,7 +129,7 @@ export function CapabilityCard({
                 />
               ) : null}
               <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none">
-                <div className="rounded-full bg-blue-800 dark:bg-blue-400 p-4">
+                <div className="rounded-full bg-white/20 p-4">
                   <Play className="h-6 w-6 text-white" fill="white" />
                 </div>
               </div>
