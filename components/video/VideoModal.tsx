@@ -29,7 +29,7 @@ export function VideoModal({
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent
         className={cn(
-          "flex flex-col p-0 bg-black overflow-hidden",
+          "flex flex-col p-0 bg-black border-none overflow-hidden",
           MODAL_CONTENT_LARGE_CLASS,
         )}
       >
