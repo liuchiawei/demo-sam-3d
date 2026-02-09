@@ -32,7 +32,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative flex min-h-screen items-center overflow-hidden bg-background"
+      className="relative flex min-h-screen items-center overflow-hidden"
       aria-label={messages.hero.title}
     >
       {/* Video background — decorative, no captions needed */}
@@ -55,7 +55,7 @@ export function HeroSection() {
 
       {/* Bottom edge gradient — smooth transition to next section */}
       <div
-        className="absolute bottom-0 left-0 right-0 z-[1] h-40 pointer-events-none bg-gradient-to-t from-background to-transparent lg:h-48"
+        className="absolute bottom-0 left-0 right-0 z-[1] h-40 pointer-events-none select-none bg-gradient-to-t from-background to-transparent lg:h-48"
         aria-hidden
       />
 
@@ -112,7 +112,7 @@ export function HeroSection() {
       {/* Scroll indicator — button for actions per a11y guidelines */}
       <motion.button
         type="button"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer touch-manipulation text-center outline-none hover:text-foreground/50 focus-visible:rounded focus-visible:ring-2 focus-visible:ring-blue-800 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
+        className="absolute bottom-8 left-1/2 z-40 -translate-x-1/2 cursor-pointer touch-manipulation text-center outline-none hover:text-foreground/50 focus-visible:rounded focus-visible:ring-2 focus-visible:ring-blue-800 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
         aria-label={messages.hero.scrollHint}
         initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ export function HeroSection() {
         onClick={scrollToNext}
         onKeyDown={handleScrollKeyDown}
       >
-        <span className="mb-2 block text-sm">
+        <span className="mb-2 block text-sm text-foreground/80">
           {messages.hero.scrollHint}
         </span>
         <motion.span
@@ -130,7 +130,10 @@ export function HeroSection() {
           animate={prefersReducedMotion ? false : { y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
         >
-          <ChevronDown className="h-6 w-6 text-blue-800 dark:text-blue-400" aria-hidden />
+          <ChevronDown
+            className="h-6 w-6 text-blue-800 dark:text-blue-400"
+            aria-hidden
+          />
         </motion.span>
       </motion.button>
     </section>
