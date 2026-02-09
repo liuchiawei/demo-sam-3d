@@ -1,4 +1,5 @@
 import { messages } from "@/lib/messages";
+import Image from "next/image";
 
 const OFFICIAL_URL = "https://aice.co.jp/";
 
@@ -26,7 +27,7 @@ export function Footer() {
               className={linkClass}
               aria-label={`${officialWebsite}（另開新視窗）`}
             >
-              {officialWebsite}
+              <Image src="/logo.png" alt={officialWebsite} width={100} height={100} />
             </a>
           </nav>
           <p className="text-sm tabular-nums text-muted-foreground">{rights}</p>
