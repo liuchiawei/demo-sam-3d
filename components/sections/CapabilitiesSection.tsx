@@ -14,6 +14,7 @@ import {
   Cuboid,
   Moon,
   ScanSearch,
+  Target,
 } from "lucide-react";
 
 export function CapabilitiesSection() {
@@ -24,7 +25,7 @@ export function CapabilitiesSection() {
       description: messages.capabilities.extraction.description,
       detail: messages.capabilities.extraction.detail,
       videoSrc: PATHS.videos.scene3d,
-      thumbnailSrc: thumbs[0],
+      thumbnailSrc: thumbs.extraction,
       show3DDialog: true,
       icon: <Box className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
@@ -32,7 +33,7 @@ export function CapabilitiesSection() {
       title: messages.capabilities.scene3d.title,
       description: messages.capabilities.scene3d.description,
       detail: messages.capabilities.scene3d.detail,
-      thumbnailSrc: thumbs[1],
+      thumbnailSrc: thumbs.scene3d,
       show3DDialog: true,
       icon: <Cuboid className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
@@ -41,7 +42,7 @@ export function CapabilitiesSection() {
       description: messages.capabilities.visualEffect.description,
       detail: messages.capabilities.visualEffect.detail,
       videoSrc: PATHS.videos.visualEffect,
-      thumbnailSrc: thumbs[2],
+      thumbnailSrc: thumbs.visualEffect,
       icon: <Sparkles className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
@@ -49,7 +50,7 @@ export function CapabilitiesSection() {
       description: messages.capabilities.background.description,
       detail: messages.capabilities.background.detail,
       videoSrc: PATHS.videos.background,
-      thumbnailSrc: thumbs[3],
+      thumbnailSrc: thumbs.background,
       icon: <Layers className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
@@ -57,7 +58,7 @@ export function CapabilitiesSection() {
       description: messages.capabilities.mosaic.description,
       detail: messages.capabilities.mosaic.detail,
       videoSrc: PATHS.videos.mosaic,
-      thumbnailSrc: thumbs[4],
+      thumbnailSrc: thumbs.mosaic,
       icon: <Shield className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
@@ -65,7 +66,7 @@ export function CapabilitiesSection() {
       description: messages.capabilities.tracking.description,
       detail: messages.capabilities.tracking.detail,
       videoSrc: PATHS.videos.tracking,
-      thumbnailSrc: thumbs[5],
+      thumbnailSrc: thumbs.tracking,
       icon: <Route className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
     {
@@ -73,7 +74,7 @@ export function CapabilitiesSection() {
       description: messages.capabilities.dark.description,
       detail: messages.capabilities.dark.detail,
       videoSrc: PATHS.videos.dark,
-      thumbnailSrc: thumbs[6],
+      thumbnailSrc: thumbs.dark,
       videoObjectPosition: "left" as const,
       icon: <Moon className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
@@ -82,10 +83,34 @@ export function CapabilitiesSection() {
       description: messages.capabilities.mini.description,
       detail: messages.capabilities.mini.detail,
       videoSrc: PATHS.videos.mini,
-      thumbnailSrc: thumbs[6],
+      thumbnailSrc: thumbs.mini,
       icon: (
         <ScanSearch className="h-12 w-12 text-blue-800 dark:text-blue-400" />
       ),
+    },
+    {
+      title: messages.capabilities.objectDetect1.title,
+      description: messages.capabilities.objectDetect1.description,
+      detail: messages.capabilities.objectDetect1.detail,
+      videoSrc: PATHS.videos.objectDetect1,
+      thumbnailSrc: thumbs.objectDetect1,
+      icon: <Target className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
+    },
+    {
+      title: messages.capabilities.objectDetect2.title,
+      description: messages.capabilities.objectDetect2.description,
+      detail: messages.capabilities.objectDetect2.detail,
+      videoSrc: PATHS.videos.objectDetect2,
+      thumbnailSrc: thumbs.objectDetect2,
+      icon: <Target className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
+    },
+    {
+      title: messages.capabilities.objectDetect3.title,
+      description: messages.capabilities.objectDetect3.description,
+      detail: messages.capabilities.objectDetect3.detail,
+      videoSrc: PATHS.videos.objectDetect3,
+      thumbnailSrc: thumbs.objectDetect3,
+      icon: <Target className="h-12 w-12 text-blue-800 dark:text-blue-400" />,
     },
   ];
 

@@ -79,6 +79,21 @@ export const messages = {
       description: "遠くからの映像の物体検知",
       detail: "解像度が低い・被写体が小さい映像でも高精度で物体を検知できます",
     },
+    objectDetect1: {
+      title: "物体検知デモ 1",
+      description: "物体検知のデモンストレーション",
+      detail: "映像内のオブジェクトをAIで正確に検知・分割するデモです",
+    },
+    objectDetect2: {
+      title: "物体検知デモ 2",
+      description: "物体検知のデモンストレーション",
+      detail: "映像内のオブジェクトをAIで正確に検知・分割するデモです",
+    },
+    objectDetect3: {
+      title: "物体検知デモ 3",
+      description: "物体検知のデモンストレーション",
+      detail: "映像内のオブジェクトをAIで正確に検知・分割するデモです",
+    },
   },
 
   industries: {
