@@ -53,6 +53,12 @@ export function HeroSection() {
         />
       </div>
 
+      {/* Bottom edge gradient — smooth transition to next section */}
+      <div
+        className="absolute bottom-0 left-0 right-0 z-[1] h-40 pointer-events-none bg-gradient-to-t from-background to-transparent lg:h-48"
+        aria-hidden
+      />
+
       {/* Theme Switcher */}
       <div className="absolute right-6 top-6 z-20">
         <ThemeSwitcher />
